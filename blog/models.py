@@ -5,6 +5,9 @@ class Candidato(models.Model):
     nome = models.CharField(max_length=200)
     url = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.nome
+
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
